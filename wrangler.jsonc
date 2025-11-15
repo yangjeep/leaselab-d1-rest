@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "leaselab-d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "riocore",
+          "database_id": "beace8f5-e60e-4071-b018-d93d8a2cae9b"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "9a32268af143456bb483c51c652cab67",
+            "binding": "SECRET",
+            "secret_name": "D1_REST_TOKEN"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
